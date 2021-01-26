@@ -203,3 +203,5 @@ where absence_yn like 'N'
       and student_address like '%전주%' 
       and student_no like 'A2%'
 order by student_name asc;
+
+
