@@ -32,3 +32,4 @@ from tb_class
 group by department_no, class_type
 having count(*) >= 10 and class_type = '전공선택'
 order by 3 desc;
+                              
