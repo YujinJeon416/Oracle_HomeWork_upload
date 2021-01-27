@@ -205,3 +205,5 @@ where absence_yn like 'N'
 order by student_name asc;
 --extract(year from entrance_date) = 2002 
 
+
+
