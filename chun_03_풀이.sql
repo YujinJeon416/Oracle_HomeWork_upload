@@ -134,3 +134,5 @@ SELECT DECODE(GROUPING(SUBSTR(TERM_NO, 1, 4)),0,SUBSTR(TERM_NO, 1, 4),1,'총평�
 FROM   TB_GRADE
 WHERE  STUDENT_NO = 'A112113'
 GROUP BY ROLLUP(SUBSTR(TERM_NO, 1, 4),SUBSTR(TERM_NO, 5, 2));
+                                             
+                                             
