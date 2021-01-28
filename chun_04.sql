@@ -14,6 +14,10 @@ select S.student_no 학번,
 from tb_student S join tb_department D
                 using(department_no);
                 
+--from tb_student S
+--join tb_department D
+--on S.department_no = D.department_no;
+                
                 
 --2. 수업번호, 수업명, 교수번호, 교수명 조회
 select * from tb_class;
@@ -48,6 +52,8 @@ where S.student_name = '송박선'
 order by G.term_no;
 
 
+
+
 --4. 학생별 전체 평점(소수점이하 첫째자리 버림) 조회 (학번, 학생명, 평점)
 --같은 학생이 여러학기에 걸쳐 같은 과목을 이수한 데이터 있으나, 전체 평점으로 계산함.
 select * from tb_student;
@@ -60,6 +66,13 @@ select s.student_no 학번,
 from tb_grade g join tb_student s on g.student_no = s.student_no
 group by s.student_no,  s.student_name
 order by s.student_no;
+
+/*select student_no,student_name, trunc(avg(point),1) avg
+from tb_grade G
+join tb_student S
+using(student_no)
+group by student_no, student_name;
+*/
 
 
 
@@ -76,3 +89,14 @@ group by s.coach_professor_no , p.professor_name
 having count(*) >=5
 order by s.coach_professor_no;
                     
+/*
+select P.professor_no, 
+          P.professor_name
+           count(*) cnt
+from tb_student S
+join tb_professor P
+on S.coach_pofessor_no = P.professor_no
+group by P.professor_no, P.professor_name
+having count (*) >= 5
+order by cnt desc;
+*/
