@@ -75,3 +75,4 @@ from tb_student s join tb_professor p on s.coach_professor_no = p.professor_no
 group by s.coach_professor_no , p.professor_name
 having count(*) >=5
 order by s.coach_professor_no;
+                    
