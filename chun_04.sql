@@ -56,7 +56,7 @@ select * from tb_grade;
 
 select s.student_no 학번,
           s.student_name 학생명,
-          trunc(avg(g.point)) 평점
+          trunc(avg(g.point),1) 평점
 from tb_grade g join tb_student s on g.student_no = s.student_no
 group by s.student_no,  s.student_name
 order by s.student_no;
