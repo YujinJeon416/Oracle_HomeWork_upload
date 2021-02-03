@@ -55,6 +55,7 @@ from tb_professor p
 group by rollup(department_name, professor_name)
 order by d.department_name;
 
+                                                                  
 
 -- 4. 이름이 [~람]인 학생의 평균학점을 구해서 학생명과 평균학점(반올림해서 소수점둘째자리까지)과 같이 출력.
 -- 동명이인일 경우에 대비해서 student_name만으로 group by 할 수 없다.
