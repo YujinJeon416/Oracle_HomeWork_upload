@@ -1,3 +1,5 @@
+
+
 --학과테이블
 select * from tb_department;
 --학생테이블
