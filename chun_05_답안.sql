@@ -85,6 +85,8 @@ having count(*) > 1;
 --------------------------------------------
 
 */
+                                                                  
+                                                                  
 select student_name, term_no, class_name, point
 from tb_student s 
     join tb_grade using(student_no)
