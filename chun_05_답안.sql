@@ -41,6 +41,7 @@ from tb_student s left join tb_professor p
 --담당교수가 없는 학생도 있기때문에 반드시 outer join으로 처리해야함.
 
 
+
 --3. 학과별 교수명과 인원수를 모두 표시하세요.
 --학과지정을 받지 못한 교수여부 조사 -> 1명 있음.
 select *
