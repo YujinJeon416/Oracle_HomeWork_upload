@@ -204,6 +204,7 @@ where (class_no, term_no) in (select distinct class_no, term_no
                             and to_number(substr(term_no,1,4))=2007)
 order by student_name;
 
+                                          
 --풀이2
 select student_name, term_no
 from tb_student,tb_grade,tb_class
