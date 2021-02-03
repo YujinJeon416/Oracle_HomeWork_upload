@@ -30,6 +30,7 @@ from tb_student join tb_department
     using(department_no);
 
 
+
 --2. 학번, 학생명, 담당교수명을 출력하세요.
 --담당교수가 없는 학생은 '없음'으로 표시
 select student_no 학번
