@@ -378,3 +378,6 @@ where category = (select category
   and class_type like '%전공%'
 group by department_name
 order by 2 desc;
+
+
+
