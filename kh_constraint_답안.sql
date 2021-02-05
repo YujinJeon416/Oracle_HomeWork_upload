@@ -6,6 +6,8 @@
 * MEMBER_ADDR (varchar2(100)) - NULL값 허용금지                    -- 회원 거주지
 * GENDER (char(3)) - '남' 혹은 '여'로만 입력 가능             -- 성별
 * PHONE(char(11)) - NULL 값 허용금지                   -- 회원 연락처
+             
+             
 2. EX_MEMBER_NICKNAME 테이블을 생성하자. (제약조건 이름 지정할것)
 (참조키를 다시 기본키로 사용할 것.)
 * MEMBER_CODE(NUMBER) - 외래키(EX_MEMBER의 기본키를 참조), 중복금지       -- 회원전용코드
@@ -22,6 +24,8 @@
         constraint uq_ex_member_id unique(member_id),
         constraint ck_ex_member_gender check(gender in ('남','여'))
     );
+                                             
+                                             
     comment on table ex_member is '회원관리테이블';
     comment on column ex_member.member_code is '회원전용코드';
     comment on column ex_member.member_id is '회원 아이디';
@@ -39,14 +43,17 @@
     comment on table ex_member_nickname is '회원별칭관리테이블';
     comment on column ex_member_nickname.member_code is '회원전용코드';
     comment on column ex_member_nickname.member_nickname is '회원 별칭';
+                                             
     --테이블 주석 조회
     select *
     from user_tab_comments
     where table_name in ('EX_MEMBER','EX_MEMBER_NICKNAME');
+                                             
     --컬럼 주석 조회
     select *
     from user_col_comments
     where table_name in ('EX_MEMBER','EX_MEMBER_NICKNAME');
+                                             
     --EX_MEMBER 제약조건 조회
     select A.owner, 
         A.table_name, 
@@ -57,6 +64,7 @@
     from user_constraints A join user_cons_columns B
         using(constraint_name)
     where A.table_name = 'EX_MEMBER';
+                                             
     --EX_MEMBER_NICKNAME 제약조건 조회
     select A.owner, 
         A.table_name, 
